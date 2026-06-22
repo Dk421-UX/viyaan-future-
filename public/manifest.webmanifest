@@ -1,0 +1,12 @@
+{
+  "name": "Viyaan Future",
+  "short_name": "Viyaan",
+  "description": "A conversation with the person you become.",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#0b698c",
+  "icons": [
+    { "src": "/viyaan-logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

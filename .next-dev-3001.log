@@ -1,0 +1,139 @@
+
+> viyaan-future@0.1.0 dev
+> next dev --hostname 127.0.0.1 --port 3001
+
+  ▲ Next.js 14.2.35
+  - Local:        http://127.0.0.1:3001
+  - Network:      http://127.0.0.1:3001
+  - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 2.8s
+ ✓ Compiled /src/middleware in 425ms (73 modules)
+ ○ Compiling /signup ...
+ ✓ Compiled /signup in 3.1s (491 modules)
+ GET /signup 200 in 3384ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 585ms (497 modules)
+ GET /login 200 in 805ms
+ ✓ Compiled in 3.1s (511 modules)
+ ✓ Compiled in 1117ms (262 modules)
+ ✓ Compiled /_not-found in 467ms (500 modules)
+ GET /login 404 in 219ms
+ ✓ Compiled in 471ms (264 modules)
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1294ms (727 modules)
+ GET /login 404 in 104ms
+ ✓ Compiled in 503ms (450 modules)
+ GET /login 404 in 63ms
+ ✓ Compiled in 385ms (450 modules)
+ GET /login 404 in 77ms
+ ✓ Compiled in 712ms (523 modules)
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+ GET /login 404 in 166ms
+ ✓ Compiled in 638ms (450 modules)
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+ GET /login 404 in 124ms
+ ✓ Compiled in 388ms (450 modules)
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+ GET /login 404 in 75ms
+ ✓ Compiled in 479ms (449 modules)
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+ GET /_next/static/webpack/f1e7499ec2a73139.webpack.hot-update.json 404 in 90ms
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+ GET /login 404 in 65ms
+[middleware] path: /viyaan-logo.png
+[middleware] session null
+[middleware] userId null
+ ✓ Compiled in 327ms (449 modules)
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+ GET /login 404 in 76ms
+ ✓ Compiled in 351ms (449 modules)
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+ GET /login 404 in 57ms
+ ✓ Compiled in 446ms (449 modules)
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+[middleware] path: /login
+[middleware] session null
+[middleware] userId null
+ GET /login 404 in 107ms
+ ✓ Compiled in 1385ms (447 modules)
+ ✓ Compiled in 312ms (447 modules)
+ ✓ Compiled in 620ms (447 modules)
+ ✓ Compiled in 237ms (447 modules)
+ ✓ Compiled in 438ms (447 modules)
+ ✓ Compiled in 2.4s (736 modules)
+ ✓ Compiled in 303ms (447 modules)
+ ✓ Compiled in 269ms (447 modules)
+ ✓ Compiled in 202ms (447 modules)
+ ✓ Compiled in 301ms (447 modules)
+ ✓ Compiled in 338ms (447 modules)
+ ✓ Compiled in 269ms (447 modules)
+ ✓ Compiled in 1380ms (736 modules)
+ ✓ Compiled in 204ms (447 modules)
+ ✓ Compiled in 503ms (722 modules)
+ ✓ Compiled in 200ms (447 modules)
+ ✓ Compiled in 639ms (722 modules)
+ ✓ Compiled in 194ms (447 modules)
+ ✓ Compiled in 719ms (722 modules)
+ ✓ Compiled in 399ms (447 modules)
+ ✓ Compiled in 295ms (447 modules)
+ ✓ Compiled in 226ms (447 modules)
+ ✓ Compiled in 203ms (447 modules)
+ ✓ Compiled in 213ms (447 modules)
+ ✓ Compiled in 200ms (447 modules)
+ ✓ Compiled in 195ms (445 modules)
+ ✓ Compiled in 765ms (730 modules)
+ ✓ Compiled in 213ms (445 modules)
+ ✓ Compiled in 494ms (716 modules)
+ ✓ Compiled in 597ms (466 modules)
+ ✓ Compiled in 151ms (418 modules)
+ ✓ Compiled in 294ms (452 modules)
+ ✓ Compiled in 156ms (418 modules)
+ ✓ Compiled in 175ms (418 modules)
+ ✓ Compiled in 579ms (452 modules)
+ ✓ Compiled in 152ms (418 modules)
+ ✓ Compiled in 201ms (418 modules)
+ ✓ Compiled in 614ms (452 modules)
+ ✓ Compiled in 303ms (418 modules)
+ ✓ Compiled in 252ms (418 modules)
+ ✓ Compiled in 207ms (418 modules)
+ ✓ Compiled in 923ms (418 modules)
+ ✓ Compiled in 252ms (418 modules)
+ ✓ Compiled in 262ms (418 modules)
+ ✓ Compiled in 219ms (418 modules)
+ ✓ Compiled in 243ms (418 modules)

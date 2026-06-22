@@ -1,0 +1,136 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id               String    @id @default(uuid())
+  name             String
+  email            String    @unique
+  passwordHash     String    @map("password")
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+
+  // Extended profile fields for Growth/Future Self
+  lifeVision       String?   @map("life_vision") @db.Text
+  currentMission   String?   @map("current_mission") @db.Text
+  topGoal          String?   @map("top_goal") @db.Text
+  topFear          String?   @map("top_fear") @db.Text
+  values           String?   @db.Text
+  whoIWantToBecome String?   @map("who_i_want_to_become") @db.Text
+
+  reflections      Reflection[]
+  memories         Memory[]
+  resetTokens      PasswordResetToken[]
+  sessions         Session[]
+  feedback         Feedback[]
+  recoveryRequests RecoveryRequest[]
+
+  @@map("users")
+}
+
+model PasswordResetToken {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  tokenHash String   @unique @map("token")
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("password_reset_tokens")
+}
+
+model Session {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  tokenHash  String   @unique @map("token_hash")
+  expiresAt  DateTime @map("expires_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+  lastUsedAt DateTime @default(now()) @map("last_used_at")
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("sessions")
+}
+
+model Reflection {
+  id             String   @id @default(uuid())
+  userId         String   @map("user_id")
+  content        String   @db.Text
+  intensity      Int
+  intensityAfter Int?     @map("intensity_after")
+  persona        String
+  generatedText  String   @map("generated_text") @db.Text
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  // Emotional analysis fields
+  primaryEmotion   String?  @map("primary_emotion")
+  secondaryEmotion String?  @map("secondary_emotion")
+  confidenceLevel  Int?     @map("confidence_level")
+  fearLevel        Int?     @map("fear_level")
+  stressLevel      Int?     @map("stress_level")
+  hopeLevel        Int?     @map("hope_level")
+  goalsStruggles   String?  @map("goals_struggles") @db.Text
+
+  // Timeline detail fields
+  detectedFear    String?  @map("detected_fear") @db.Text
+  thinkingPattern String?  @map("thinking_pattern") @db.Text
+  growthDirection String?  @map("growth_direction") @db.Text
+  nextStep        String?  @map("next_step") @db.Text
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@map("reflections")
+}
+
+model Memory {
+  id         String   @id @default(uuid())
+  userId     String   @map("user_id")
+  type       String   // fear, goal, dream, pattern, victory, decision, belief
+  content    String   @db.Text
+  importance Int      @default(5)
+  lastUsedAt DateTime @default(now()) @map("last_used")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, type])
+  @@index([userId, importance, lastUsedAt])
+  @@map("memories")
+}
+
+model Feedback {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  rating    Int
+  message   String   @db.Text
+  type      String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([type, createdAt])
+  @@map("feedback")
+}
+
+model RecoveryRequest {
+  id        String   @id @default(uuid())
+  userId    String?  @map("user_id")
+  email     String
+  message   String   @db.Text
+  status    String   @default("pending")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([email, createdAt])
+  @@index([status, createdAt])
+  @@map("recovery_requests")
+}
