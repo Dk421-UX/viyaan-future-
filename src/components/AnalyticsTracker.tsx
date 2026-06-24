@@ -11,7 +11,6 @@ function Tracker() {
   useEffect(() => {
     const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '')
     ga.pageview(url)
-    ga.event('page_view', { page_path: url })
   }, [pathname, searchParams])
 
   return null

@@ -125,7 +125,7 @@ export default function ResultPage() {
       }
       if (data.success) {
         // Fire analytics event
-        ga.event('timeline_saved')
+        ga.reflectionCreated({ persona })
 
         setSaveSuccess(true)
         sessionStorage.removeItem('viyaan_entry')

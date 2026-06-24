@@ -4,6 +4,7 @@ import { getSession } from '../../../lib/auth'
 import { prisma } from '../../../lib/prisma'
 import AppHeader from '../../../components/AppHeader'
 import FeedbackButton from '../../../components/FeedbackButton'
+import ReflectionViewTracker from '../../../components/ReflectionViewTracker'
 import { renderAIField } from '../../../lib/ai-render'
 
 export const dynamic = 'force-dynamic'
@@ -51,6 +52,7 @@ export default async function ReflectionDetailPage({ params }: ReflectionPagePro
   return (
     <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] pb-24">
       <AppHeader />
+      <ReflectionViewTracker reflectionId={reflection.id} />
 
       <main id="main-content" className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:py-12">
         <div className="mb-6">

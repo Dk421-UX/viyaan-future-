@@ -29,7 +29,7 @@ export function LoginForm({ nextPath = '/dashboard', reset = false }: { nextPath
     try {
       const { data } = await postJson('/api/auth', { action: 'login', email, password })
       if (!data.success) throw new Error(data.error || 'Unable to sign in.')
-      ga.event('login_success')
+      ga.loginCompleted()
       const destination = nextPath.startsWith('/') && !nextPath.startsWith('//') ? nextPath : '/dashboard'
       window.location.assign(destination)
     } catch (caught) {
@@ -84,7 +84,7 @@ export function SignupForm() {
     try {
       const { data } = await postJson('/api/auth', { action: 'signup', name, email, password })
       if (!data.success) throw new Error(data.error || 'Unable to create your account.')
-      ga.event('signup_success')
+      ga.signupCompleted()
       window.location.assign('/dashboard')
     } catch (caught) {
       setError(caught instanceof Error ? caught.message : 'Network error. Please try again.')
